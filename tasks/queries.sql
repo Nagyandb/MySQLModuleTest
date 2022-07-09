@@ -258,6 +258,9 @@ bónusz 1. (4 pont)
     Elvárt eredmény:
         88 rekord
 */
+SELECT `country`.`Code`, `country`.`Code2`, `country`.`Name`
+FROM `country`
+WHERE LEFT(`country`.`Code`,2) NOT LIKE `country`.`Code2`;
 
 
 /*
@@ -271,6 +274,10 @@ bónusz 2. (4 pont)
     Elvárt eredmény:
         363 rekord
 */
+SELECT *
+FROM `city` INNER JOIN
+(SELECT * FROM `country` WHERE `IndepYear` = (SELECT MIN(`IndepYear`) FROM `country`)) AS `IndependentCountry`
+ON `city`.`CountryCode` = `IndependentCountry`.`Code`;
 
 
 /*
