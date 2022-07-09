@@ -224,6 +224,9 @@ WHERE `countrylanguage`.`IsOfficial` = 'F' AND Language = 'English';
         7 rekord
         országkódok: ATA, ATF, BVT, HMD, IOT, SGS, UMI
 */
+SELECT *
+FROM `country` LEFT JOIN `city` ON `city`.`CountryCode` = `country`.`Code`
+WHERE `city`.`Name` IS NULL;
 
 
 /*
