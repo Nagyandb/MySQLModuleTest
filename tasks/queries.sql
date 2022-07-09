@@ -175,6 +175,10 @@ SELECT * FROM `city` WHERE `city`.`Population` LIKE '___';
         35 rekord
         országkódok, amelyek szerepelnek a listában: DNK, FIN, FRO, ISL, NOR, SJM, SWE
 */
+SELECT `city`.`ID`, `city`.`Name`, `city`.`CountryCode`, `city`.`District`, `city`.`Population`
+FROM `city`INNER JOIN `country` ON `city`.`CountryCode` = `country`.`Code`
+WHERE `country`.`Region` LIKE '%Nordic Countries%'
+ORDER BY `city`.`CountryCode` ASC, `city`.`Population` DESC;
 
 
 /*
