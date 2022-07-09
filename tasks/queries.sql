@@ -33,6 +33,7 @@ Jó munkát!
     Elvárt eredmény:
         -1523
 */
+SELECT MIN(`IndepYear`) FROM `country`;
 
 
 /*
@@ -45,6 +46,7 @@ Jó munkát!
     Elvárt eredmény:
         CHN Code-ú ország (China)
 */
+SELECT * FROM `country` WHERE IndepYear = (SELECT MIN(IndepYear) FROM country);
 
 
 /*
@@ -57,6 +59,7 @@ Jó munkát!
         ID szerint növekvő sorrendben az első 5 darab: 2, 3, 8, 11, 34
         ID szerint növekvő sorrendben az utolsó 3 darab: 4076, 4078, 4079
 */
+SELECT * FROM `city` WHERE `city`.`District` = `city`.`Name`;
 
 
 /*
@@ -69,6 +72,8 @@ Jó munkát!
         7 rekord
         országnevek: Bangladesh, Bahrain, Kuwait, Mauritania, Qatar, Sudan, Sierra Leone
 */
+SELECT `country`.`Name`, `country`.`HeadOfState` FROM `country` WHERE `country`.`HeadOfState`LIKE '%Ahmad%' OR
+`country`.`HeadOfState` LIKE '%Ahmed%' OR `country`.`HeadOfState` LIKE '%Hamad%';
 
 
 /*
@@ -81,6 +86,7 @@ Jó munkát!
         10 rekord
         kontinensek: Oceania (7 db), Europe (2), South America (1)
 */
+SELECT * FROM `country` WHERE `country`.`LifeExpectancy` IS NULL AND `country`.`Population` > 1
 
 
 /*
