@@ -45,6 +45,26 @@ Kritériumok az adatbázissal kapcsolatban:
       (ha az egyik táblában camel-case szerinti mező-neveket adtál, akkor a másik táblában is tégy úgy)
 
 */
+CREATE TABLE `messenger application`.`user_data`
+(`id` INT NOT NULL AUTO_INCREMENT , `name` VARCHAR(125) NOT NULL ,
+`email_address` VARCHAR(100) NOT NULL ,
+`password` VARCHAR NOT NULL ,
+`is_active` BOOLEAN NOT NULL ,
+`date_of_registration` DATE NULL ,
+`membership` VARCHAR(100) NOT NULL ,
+PRIMARY KEY (`id`),
+UNIQUE (`email_address`)) ENGINE = InnoDB;
+
+CREATE TABLE `messenger application`.`message_data`
+(`sender` VARCHAR(150) NOT NULL ,
+`recipient` VARCHAR(150) NOT NULL ,
+`email_text` TEXT NOT NULL ,
+`date_of_time` DATE NOT NULL ,
+`is_ reply` BOOLEAN NOT NULL ,
+`message_id` INT(250) NULL AUTO_INCREMENT ,
+PRIMARY KEY (`message_id`)) ENGINE = InnoDB;
+
+ALTER TABLE `message_data` ADD `header` TEXT NOT NULL AFTER `message_id`, ADD UNIQUE (`header`);
 
 
 -- ---------------------------------------------------------------------------------------------------------------------
