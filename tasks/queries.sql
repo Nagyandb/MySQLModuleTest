@@ -210,6 +210,9 @@ ORDER BY `country`.`Name` DESC;
         16 rekord
         országkódok: ABW, ANT, BHR, BRN, COK, DNK, ISL, JPN, KWT, MAC, MCO, MDV, MYS, NOR, PRI, TTO
 */
+SELECT *
+FROM `country` INNER JOIN `countrylanguage` ON `country`.`Code` = `countrylanguage`.`CountryCode`
+WHERE `countrylanguage`.`IsOfficial` = 'F' AND Language = 'English';
 
 
 /*
