@@ -238,6 +238,9 @@ WHERE `city`.`Name` IS NULL;
     Elvárt eredmény:
         65 rekord
 */
+SELECT `country`.`Name`, `country`.`Continent`, `country`.`Region`, `countrylanguage`.`Language`, `countrylanguage`.`Percentage`
+FROM `country` INNER JOIN `countrylanguage` ON `countrylanguage`.`CountryCode` = `country`.`Code`
+WHERE `countrylanguage`.`Percentage`= '0.0';
 
 
 -- ---------------------------------------------------------------------------------------------------------------------
