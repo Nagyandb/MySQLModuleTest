@@ -72,8 +72,10 @@ SELECT * FROM `city` WHERE `city`.`District` = `city`.`Name`;
         7 rekord
         országnevek: Bangladesh, Bahrain, Kuwait, Mauritania, Qatar, Sudan, Sierra Leone
 */
-SELECT `country`.`Name`, `country`.`HeadOfState` FROM `country` WHERE `country`.`HeadOfState`LIKE '%Ahmad%' OR
-`country`.`HeadOfState` LIKE '%Ahmed%' OR `country`.`HeadOfState` LIKE '%Hamad%';
+SELECT `country`.`Name`, `country`.`HeadOfState`
+FROM `country`
+WHERE `country`.`HeadOfState`
+LIKE '%Ahmad%' OR`country`.`HeadOfState` LIKE '%Ahmed%' OR `country`.`HeadOfState` LIKE '%Hamad%';
 
 
 /*
@@ -86,7 +88,7 @@ SELECT `country`.`Name`, `country`.`HeadOfState` FROM `country` WHERE `country`.
         10 rekord
         kontinensek: Oceania (7 db), Europe (2), South America (1)
 */
-SELECT * FROM `country` WHERE `country`.`LifeExpectancy` IS NULL AND `country`.`Population` > 1
+SELECT * FROM `country` WHERE `country`.`LifeExpectancy` IS NULL AND `country`.`Population` > 1;
 
 
 /*
@@ -112,8 +114,11 @@ WHERE `GNPOld` > `GNP`;
     Elvárt eredmény:
         29 rekord
 */
-SELECT `countrylanguage`.`Language` FROM `countrylanguage` WHERE `countrylanguage`.`Language` LIKE '%ian'
-GROUP BY `Language` ORDER BY `Language` ASC;
+SELECT `countrylanguage`.`Language`
+FROM `countrylanguage`
+WHERE `countrylanguage`.`Language` LIKE '%ian'
+GROUP BY `Language`
+ORDER BY `Language` ASC;
 
 
 /*
@@ -127,6 +132,7 @@ GROUP BY `Language` ORDER BY `Language` ASC;
         Western Europe: 9
         Eastern Europe 10
 */
+SELECT `country`.`Region`, COUNT(`country`.`Region`) FROM `country` WHERE `country`.`Region` LIKE '%Europe%' GROUP BY Region;
 
 
 /*
