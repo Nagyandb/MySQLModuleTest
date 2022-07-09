@@ -98,6 +98,9 @@ SELECT * FROM `country` WHERE `country`.`LifeExpectancy` IS NULL AND `country`.`
     Elvárt eredmény:
         63 rekord
 */
+SELECT `country`.`Code`, `country`.`Name`,`country`.`GNP`,`country`.`GNPOld`
+FROM `country`
+WHERE `GNPOld` > `GNP`;
 
 
 /*
@@ -109,6 +112,8 @@ SELECT * FROM `country` WHERE `country`.`LifeExpectancy` IS NULL AND `country`.`
     Elvárt eredmény:
         29 rekord
 */
+SELECT `countrylanguage`.`Language` FROM `countrylanguage` WHERE `countrylanguage`.`Language` LIKE '%ian'
+GROUP BY `Language` ORDER BY `Language` ASC;
 
 
 /*
