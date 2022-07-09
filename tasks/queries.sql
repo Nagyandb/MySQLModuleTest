@@ -147,6 +147,9 @@ SELECT `country`.`Region`, COUNT(`country`.`Region`) FROM `country` WHERE `count
         első országkód: AFG
         utolsó országkód: ZWE
 */
+SELECT `country`.`Code`, `country`.`Name`, `city`.`Name`
+FROM `country` LEFT JOIN `city` ON `country`.`Capital`= `city`.`ID`
+ORDER BY `country`.`Name` ASC;
 
 
 /*
@@ -158,6 +161,7 @@ SELECT `country`.`Region`, COUNT(`country`.`Region`) FROM `country` WHERE `count
         10 rekord
         a városok ID-ja: 61, 62, 1791, 2316, 2317, 2728, 2805, 2806, 3333, 3538
 */
+SELECT * FROM `city` WHERE `city`.`Population` LIKE '___';
 
 
 /*
