@@ -194,6 +194,11 @@ ORDER BY `city`.`CountryCode` ASC, `city`.`Population` DESC;
         legkisebb: Northern Africa (1)
         legnagyobb: Caribbean (11)
 */
+SELECT `country`.`Region`, COUNT(`country`.`Region`) `country`.`Name`
+FROM `country`
+WHERE `country`.`IndepYear` IS NULL OR `country`.`IndepYear` < 1500
+GROUP BY `country`.`Region`
+ORDER BY `country`.`Name` DESC;
 
 
 /*
