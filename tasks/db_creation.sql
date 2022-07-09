@@ -66,7 +66,7 @@ PRIMARY KEY (`message_id`)) ENGINE = InnoDB;
 
 ALTER TABLE `message_data` ADD `header` TEXT NOT NULL AFTER `message_id`, ADD UNIQUE (`header`);
 
-
+ALTER TABLE `user_data` ADD FOREIGN KEY (`id`) REFERENCES `message_data`(`message_id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 -- ---------------------------------------------------------------------------------------------------------------------
 
 /*
